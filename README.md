@@ -26,7 +26,7 @@ Then what i did especically are:
 
 	sudo ln -s /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include/c++/v1
 
-##4. AOSP's prebuild clang++ or g++ can not handle some latest header file of OS X SDK, i have no way, so modify following two files:
+##4. AOSP's prebuild compiler for host side can not handle some latest header file of OS X SDK, i have no way, so modify following two files:
 
 ###  $mac_sdk_root/System/Library/Frameworks/CoreGraphics.framework/Versions/A/Headers/CGFont.h:
 
