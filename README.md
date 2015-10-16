@@ -10,7 +10,7 @@ build whole android (AOSP) in Mac OS X Yosemite + Xcode 7.0.1(v10.5 SDK)
 
 First of course, download AOSP by official <a href="https://source.android.com/source/downloading.html">instructions</a> except that i use android-5.1.1_r14 branch instead of android-4.0.1_r1.  
 
-What i did especically are: 
+Then what i did especically are: 
 
 ##1. To avoid check error of OS X SDK version, run following command first:
 	export build_mac_version=`sw_vers -productVersion`  #for me, result is 10.10.5
@@ -44,3 +44,10 @@ What i did especically are:
 	> #endif
 
 
+
+-------------------------
+OK, now you can <a href="https://source.android.com/source/building.html">make</a>, as a tip, you can add "showcommands" option to make, and even combine more like following commands to save output with timestamp prefix to log file.
+
+    make -j4 -k showcommands 2>&1 | (while read line; do echo `date +"%Y-%m-%d %H:%M:%S"` $line; done) | tee out/make.log
+
+Good luck
