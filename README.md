@@ -2,8 +2,8 @@
 build whole android (AOSP) in Mac OS X Yosemite + Xcode 7.0.1(v10.5 SDK)
 
 
-My environment:
-	Mac OX X 10.10.5(14F27),
+##My environment:
+	Mac OX X 10.10.5(14F27)
 	Xcode 7.0.1(7A1001)
 	jdk1.7.0_80
 	jdk1.8.0_51 (Default)
@@ -28,7 +28,7 @@ What i did especically are:
 
 ##4. AOSP's prebuild clang++ or g++ can not handle some latest header file of OS X SDK, i have no way, so modify following two files:
 
-###$mac_sdk_root/System/Library/Frameworks/CoreGraphics.framework/Versions/A/Headers/CGFont.h:
+###  $mac_sdk_root/System/Library/Frameworks/CoreGraphics.framework/Versions/A/Headers/CGFont.h:
 
 	53c53,54
 	< static const CGFontIndex kCGGlyphMax = kCGFontIndexMax;
@@ -36,7 +36,7 @@ What i did especically are:
 	> //static const CGFontIndex kCGGlyphMax = kCGFontIndexMax;
 	> static const CGFontIndex kCGGlyphMax = ((1 << 16) - 2);
 
-###$mac_sdk_root/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Headers/FSEvents.h:
+###  $mac_sdk_root/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Headers/FSEvents.h:
 
 	489a490
 	> #if MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_9
